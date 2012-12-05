@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="28516f0b-1a83-4ea3-aace-ceb9533fcd5f" Publisher="CN=Robert" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>win8CoffeeXAML</DisplayName>
+    <PublisherDisplayName>Robert</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="win8CoffeeXAML.App">
+      <VisualElements DisplayName="My Coffee shop finder App" Logo="Assets\CoffeeFindrLogo.png" SmallLogo="Assets\CoffeeFindrSmallLogo.png" Description="Finds Coffee shops around your current location using yahoo APIs" ForegroundText="light" BackgroundColor="#542710">
+        <LockScreen Notification="badge" BadgeLogo="Assets\CoffeeFindrBadgeLogo.png" />
+        <DefaultTile ShowName="allLogos" ShortName="Coffee finder" WideLogo="Assets\CoffeeFindrWideLogo.png" />
+        <SplashScreen Image="Assets\CoffeeFindrSplashScreen.scale-100.png" BackgroundColor="#542710" />
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="TileBackground.Class1">
+          <BackgroundTasks>
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+        <Extension Category="windows.search" />
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <DeviceCapability Name="location" />
+  </Capabilities>
+</Package>
